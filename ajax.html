@@ -15,12 +15,18 @@
 
 <body>
 	
+	<p id="empty"></p>
 	
 	<script type="text/javascript">
 		
-		$.get("content.txt", function(data){
+		$.ajax("content.txt").done(function(data){
 			
-			alert(data);
+			$("#empty").html(data);
+			
+		}).fail(function(){
+			
+			alert("failed to get data")
+			
 		})
 
 	</script>
